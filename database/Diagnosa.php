@@ -20,4 +20,6 @@ class Diagnosa
 		$stmt = $this->pdo->query($sql);
 		return $stmt;
 	}
+
+	
 }

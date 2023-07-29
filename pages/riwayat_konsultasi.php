@@ -5,7 +5,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'user';
 
 // Pastikan sesi sudah dimulai untuk mengakses $_SESSION
 include '../database/Riwayat.php'; // Ganti path/ke/ dengan direktori tempat Riwayat.php berada
-
+include 'header_baru.php';
 
 $userId = $_SESSION['id'];
 
@@ -22,12 +22,6 @@ $datariwayat = $riwayat->riwayatKonsultasi($userId);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riwayat Konsultasi</title>
-    <!-- Bootstrap CSS from CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,11 +48,6 @@ $datariwayat = $riwayat->riwayatKonsultasi($userId);
             text-align: center;
         }
 
-        .scroll-box {
-            overflow: scroll;
-            height: 467px;
-        }
-
         .input-group {
             margin-bottom: 10px;
         }
@@ -66,14 +55,28 @@ $datariwayat = $riwayat->riwayatKonsultasi($userId);
         .btn {
             margin-top: 20px;
         }
+        .table th {
+            text-align: center;
+        }
+        .table th, .table td {
+            padding: 8px;
+            text-align: justify;
+        }
     </style>
 </head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Konsultasi</title>
+    <!-- Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <body>
-        <div class="container">
-        <h2 >Riwayat Konsultasi</h2>
+<div class="container">
+        
+            <div class="box-header with-border">
+                <h3 class="text-center">Riwayat Konsultasi</h3>
+            </div>
         <table class="table">
-            
             <thead>
                 <tr>
                     <th>No </th>
@@ -88,7 +91,7 @@ $datariwayat = $riwayat->riwayatKonsultasi($userId);
                 if (!empty($datariwayat)) {
                     $nomor = 1; // Variabel untuk nomor urut
                     foreach ($datariwayat as $row) {
-                        echo "<tr>";
+                        echo "<tr >";
                         echo "<td>".$nomor."</td>";
                         echo "<td>".$row['nama_penyakit']."</td>";
                         echo "<td>".$row['info_penyakit']."</td>";

@@ -15,7 +15,7 @@
 
    <div class="row bar-pesan">
       <div class="col-4 cari-chat text-center">
-         <input class="form-control mr-sm-2 kotak-chat" type="search"  placeholder="Cari Pasien..." autofocus aria-label="Search" id="keyword">
+         <!-- <input class="form-control mr-sm-2 kotak-chat" type="search"  placeholder="Cari Pasien..." autofocus aria-label="Search" id="keyword"> -->
 
       </div>
 

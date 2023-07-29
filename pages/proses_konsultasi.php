@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Diagnosa</title>
-    <!-- Bootstrap CSS from CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<?php
+include 'header_baru.php';
+?>
+<head>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,6 +44,14 @@
 </head>
 
 <body>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<body>
     <div class="container-fluid ml-10">
         <div class="box">
             <div class="box-header with-border">
@@ -56,11 +59,12 @@
             </div>
             <br>
 
-            <?php
+<?php
 session_start();
 
 // Panggil fungsi untuk membuat koneksi
 include '../database/Riwayat.php';
+
 
 // Pastikan file Riwayat.php telah berada di direktori yang tepat
 $riwayat = new Riwayat();
@@ -84,7 +88,7 @@ if (isset($_POST)) {
 $gejala = array_unique($gejala);
 
 // Tambahkan pesan log sederhana untuk melihat nilai gejala
-var_dump($gejala);
+// var_dump($gejala);
 
 // Buat query SQL untuk mencari aturan-aturan terkait dengan gejala
 $qry = "SELECT kode_penyakit FROM aturan WHERE ";
@@ -139,7 +143,7 @@ if (empty($penyakit)) {
     echo "</tr>";
     echo "</tbody>";
     echo "</table>";
-    echo "<a href='diagnosa.php' class='btn btn-primary'>Mulai Konsultasi Ulang</a> ";
+    echo "<a href='diagnosa_page.php' class='btn btn-primary'>Mulai Konsultasi Ulang</a> ";
     echo "<a href='riwayat_konsultasi.php' class='btn btn-primary'>Cek Riwayat Konsultasi</a>";
     echo "</div>";
 

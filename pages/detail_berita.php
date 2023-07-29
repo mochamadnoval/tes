@@ -68,67 +68,7 @@
 </div>
 <br />
 
-<div class="row komentar">
-	<div class="col-8">
-		<?php
-		if(isset($_SESSION['role'])){
-			$nama = $_SESSION['nama'];
-			$role = $_SESSION['role'];
-		?>
-		<!-- <form action="process/komentar/tambahKomentar_proses.php" method="post" enctype="multipart/form-data"> -->
-		<div class="komen-lawan">
-			<img src="<?= $_SESSION['foto'] ?>">
-			<div class="form-group" >
-				<input type="hidden" name="nama" value="<?php echo $nama; ?>" id="nama">
-				<textarea class="form-control" name ="komentar" maxlength="120" id="text" required></textarea>
-				<input type="hidden" name="post" value="<?php echo $data['id']; ?>" id="post">
-				<span class="badge badge-secondary" id="count_message"></span>
-				<button type="button" class="btn btn-secondary tombolpost" id="sendkomentar">Post</button>
-			</div>
-		</div>
-		<!-- </form> -->
-		<?php
-		}else{
-		?>
-		<h3 class="text-hijau">Silahkan login untuk berkomentar</h3>
-		<?php
-		}
-		?>
 
-		<div id="kolomKomentar">
-			<?php
-			$post = $_GET['id'];
-			$komentar= new Komentar;
-			$data2 = $komentar->tampilKomentarByPost($post);
-			foreach ($data2 as $row2) :
-			?>
-			<div class="komen-lawan2">
-				<img src="<?= $row2['foto_user'] ?>">
-				<h1 class="text-hijau"><?= $row2['nama'] ?></h1>
-				<p><?= $row2['komentar'] ?></p>
-			</div>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</div>
-
-<script src="http://code.jquery.com/jquery-1.5.js"></script>
-<script>
-	$( document ).ready(function() {
-		var text_max = 120;
-		$('#count_message').html('0 / ' + text_max );
-
-		$('#text').keyup(function() {
-			var text_length = $('#text').val().length;
-			var text_remaining = text_max - text_length;
-			$('#count_message').html(text_length + ' / ' + text_max);
-		});
-
-		$("#sendkomentar").click(function(){
-			$('#count_message').html('0 / ' + text_max );
-		});
-	});
-</script>
 
 <script type="text/javascript" src="js\komentarArtikel.js"></script>
 <script type="text/javascript" src="js\sendKomentarArtikel.js"></script>

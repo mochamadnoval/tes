@@ -74,14 +74,14 @@
 
 <!-- Jumbotron -->
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-sm-8 ">
         <h1 class="display-4">Segera periksa kehamilan anda <br> jika ada keluhan </h1>
       </div>
-      <div class="col-sm-4 doctor">
+      <!-- <div class="col-sm-4 doctor">
         <img src="img/doctor.png">
-      </div>
+      </div> -->
   </div>
   </div>
 </div>

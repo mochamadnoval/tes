@@ -44,7 +44,7 @@
                         <input class="cd-signin-modal__input cd-signin-modal__input--full-width" type="submit" value="Login">
                     </p>
                 </form>
-                <br><center><p>Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a></p></center>
+                <br><center><p>2023 &copy; All Right Reserved Apps E-Bidan</a></p></center>
                 
 
                 <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="reset">Forgot your password?</a></p>

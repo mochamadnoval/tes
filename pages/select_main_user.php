@@ -6,7 +6,7 @@
         <?php if ($_SESSION['role']=='user'): ?>
         <a href="index.php?p=select_chat" class="page-scroll">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon22.png" alt="ChatDokter">
+            <img src="photos/chatdokter.png" alt="ChatDokter">
             <h4>CHAT DOKTER</h4>
             <p>Tanyakan kepada dokter ahli.</p>
           </div>
@@ -15,7 +15,7 @@
         <?php else: ?>
         <a href="#" data-signin="login" class="page-scroll">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon22.png" alt="ChatDokter">
+            <img src="photos/chatdokter.png" alt="ChatDokter">
             <h4>CHAT DOKTER</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
           </div>
@@ -26,7 +26,7 @@
       <?php if ($_SESSION['role']=='user'): ?>
         <a href="pages/select_chat_blank.php" target="_blank">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon11.png" alt="High Res">
+            <img src="photos/pesan.png" alt="High Res">
             <h4>Pesan</h4>
             <p>Lihat semua pesan anda disini.</p>
           </div>
@@ -35,7 +35,7 @@
       <?php else: ?>
         <a href="#">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon11.png" alt="High Res">
+            <img src="photos/pesan.png" alt="High Res">
             <h4>Pesan</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
           </div>
@@ -44,9 +44,9 @@
 
       <?php if(isset($_SESSION['role'])): ?>
       <?php if ($_SESSION['role']=='user'): ?>
-        <a href="pages/diagnosa.php">
+        <a href="pages/diagnosa_page.php">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon11.png" alt="High Res">
+            <img src="photos/stetoskop.png" alt="High Res">
             <h4>Konsultasi</h4>
             <p>Konsultasikan penyakit anda dengan kami.</p>
           </div>
@@ -55,7 +55,7 @@
       <?php else: ?>
         <a href="#">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon11.png" alt="High Res">
+            <img src="photos/stetoskop.png" alt="High Res">
             <h4>Konsultasi</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
           </div>
@@ -66,7 +66,7 @@
       <?php if ($_SESSION['role']=='user'): ?>
         <a href="pages/riwayat_konsultasi.php">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon11.png" alt="High Res">
+            <img src="photos/diagnosa.png" alt="High Res">
             <h4>Riwayat Konsultasi</h4>
             <p>Cek riwayat konsultasi anda disini.</p>
           </div>
@@ -75,7 +75,7 @@
       <?php else: ?>
         <a href="#">
           <div class="col-lg info-panel mr-3 mb-3">
-            <img src="img/icon11.png" alt="High Res">
+            <img src="photos/diagnosa.png" alt="High Res">
             <h4>Riwayat Konsultasi</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
           </div>
