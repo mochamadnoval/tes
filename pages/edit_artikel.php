@@ -16,8 +16,8 @@
   </div>
   <div class="form-group">
     <label for="isiartikel">Isi Artikel :</label>
-    <input type="text" class="form-control" name="artikel" value="<?= $data['artikel']  ?>" id="isiartikel" rows="3">
-  </div>
+    <textarea class="form-control" name="artikel" id="isiartikel" rows="3"><?= nl2br($data['artikel']) ?></textarea>
+</div>
   <img src="<?= $data['foto']; ?>"><br /><br />
   <div class="form-group">
     <label for="pict">Ubah Gambar :</label>

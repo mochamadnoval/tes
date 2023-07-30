@@ -5,7 +5,7 @@
 	$kode_gejala = $_POST['kode_gejala'];
 
 	$aturan = new Aturan;
-	$aturan->tambahaturan($kode_penyakit,$kode_gejala);
+	$aturan->tambahAturan($kode_penyakit,$kode_gejala);
 	echo "<script>
 						alert('Data Berhasil Ditambah !');
 						window.location = '../../index.php?p=tabel_aturan';
