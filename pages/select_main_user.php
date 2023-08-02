@@ -13,8 +13,8 @@
         </a>
         <?php endif ; ?>
         <?php else: ?>
-        <a href="#" data-signin="login" class="page-scroll">
           <div class="col-lg info-panel mr-3 mb-3">
+          <a href="pages/harap_login.php">
             <img src="photos/chatdokter.png" alt="ChatDokter">
             <h4>CHAT DOKTER</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
@@ -35,6 +35,7 @@
       <?php else: ?>
         <a href="#">
           <div class="col-lg info-panel mr-3 mb-3">
+          <a href="pages/harap_login.php">
             <img src="photos/pesan.png" alt="High Res">
             <h4>Pesan</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
@@ -53,8 +54,8 @@
         </a>
       <?php endif ;?>
       <?php else: ?>
-        <a href="#">
           <div class="col-lg info-panel mr-3 mb-3">
+          <a href="pages/harap_login.php">
             <img src="photos/stetoskop.png" alt="High Res">
             <h4>Konsultasi</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
@@ -73,8 +74,8 @@
         </a>
       <?php endif ;?>
       <?php else: ?>
-        <a href="#">
           <div class="col-lg info-panel mr-3 mb-3">
+          <a href="pages/harap_login.php">
             <img src="photos/diagnosa.png" alt="High Res">
             <h4>Riwayat Konsultasi</h4>
             <P>Anda belum login, Silahkan Login terlebih dahulu!</p>
