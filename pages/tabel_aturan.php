@@ -58,6 +58,7 @@
               </div>
             </div>
           </div>
+
           <!-- Akhir Modal Delete Dokter -->
           <!-- Modal Edit Gejala -->
 <!-- Modal Edit Gejala -->
@@ -90,6 +91,7 @@
         </div>
       </div>
     </div>
+    
 
 <!-- Akhir Modal Edit Gejala -->
 
