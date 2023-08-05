@@ -108,5 +108,12 @@ $datariwayat = $riwayat->riwayatKonsultasi($userId);
             </tbody>
         </table>
     </div>
+    <div class="row footer">
+  <div class="col text-center">
+    <p>2023 &copy; All Right Reserved Apps E-Bidan</a>
+    </p>
+
+  </div>
+</div>
 </body>
 </html>

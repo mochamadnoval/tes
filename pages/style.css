@@ -1,0 +1,30 @@
+.container-fluid {
+  max-width: 50rem;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.box-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 5px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+.question {
+  text-align: center;
+}
