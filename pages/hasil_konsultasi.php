@@ -2,7 +2,7 @@
 include 'header_baru.php';
 ?>
 <head>
-    
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -26,24 +26,29 @@ session_start();
 
 // Panggil fungsi untuk membuat koneksi
 include '../database/Riwayat.php';
+// Buat objek riwayat
+$riwayat = new Riwayat();
 
+try {
+    // Koneksi ke database
+    $host = 'localhost';
+    $dbname = 'konsuldoc';
+    $username = 'root';
+    $password = '';
 
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Jika tidak ada gejala yang cocok dengan aturan, tampilkan pesan
-if (empty($penyakit)) {
-    echo "<p>Sistem tidak dapat menentukan penyakit anda, <br> Silahkan gunakan fitur live chat untuk berkonsultasi langsung dengan dokter :)</p>";
-    echo "<a href='http://localhost:8080/wil/index.php?p=select_chat' class='btn btn-primary'>Chat Dokter</a>";
-    echo "</div>";
-} else {
-    // Hitung penyakit yang paling sering muncul pada array penyakit
-    $penyakit_terbanyak = array_count_values($penyakit);
-    arsort($penyakit_terbanyak);
-    $kode_penyakit = key($penyakit_terbanyak);
+    // Ambil kode_penyakit terbanyak dari tabel aturan
+    $query = "SELECT kode_penyakit, COUNT(*) as jumlah FROM aturan GROUP BY kode_penyakit ORDER BY jumlah DESC LIMIT 1";
+    $stmt = $pdo->query($query);
+    $result = $stmt->fetch();
+    $kode_penyakit_terbanyak = $result['kode_penyakit'];
 
-    // Query untuk mendapatkan solusi berdasarkan kode_penyakit yang terbanyak
+    // Query untuk mendapatkan data penyakit berdasarkan kode_penyakit terbanyak
     $qry2 = "SELECT nama_penyakit, info_penyakit, solusi FROM penyakit WHERE kode_penyakit = ?";
     $stmt2 = $pdo->prepare($qry2);
-    $stmt2->execute([$kode_penyakit]);
+    $stmt2->execute([$kode_penyakit_terbanyak]);
     $d2 = $stmt2->fetch();
 
     // Tampilkan hasil diagnosa
@@ -64,7 +69,7 @@ if (empty($penyakit)) {
     echo "</tr>";
     echo "</tbody>";
     echo "</table>";
-    echo "<a href='diagnosa_page.php' class='btn btn-primary'>Mulai Konsultasi Ulang</a> ";
+    echo "<a href='question_page.php' class='btn btn-primary'>Mulai Konsultasi Ulang</a> ";
     echo "<a href='riwayat_konsultasi.php' class='btn btn-primary'>Cek Riwayat Konsultasi</a>";
     echo "</div>";
 
@@ -76,10 +81,10 @@ if (empty($penyakit)) {
     $solusi = $d2['solusi'];
     $tanggal = date('Y-m-d H:i:s'); // Tanggal dan waktu saat ini
     $riwayat->simpanRiwayat($user_id, $nama_user, $nama_penyakit, $info_penyakit, $solusi, $tanggal);
-}
 
-// Tutup koneksi ke database
-$pdo = null;
+} catch (PDOException $e) {
+    echo "Koneksi atau eksekusi query gagal: " . $e->getMessage();
+}
 ?>
     <div class="row footer">
   <div class="col text-center">

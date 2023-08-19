@@ -1,32 +1,15 @@
 
 <?php
-
-
 class Riwayat
 {
 	private $pdo;
 
 	function __construct()
-	
 	{
-        $this->pdo = $this->buatKoneksiPDO();
-    }
-	
-	
-	function buatKoneksiPDO()
-	{
-		$host = 'localhost';
-		$dbname = 'konsuldoc';
-		$username = 'root';
-		$password = '';
-
 		try {
-			$pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			return $pdo;
+			$this->pdo = new PDO('mysql:host=localhost;dbname=konsuldoc', 'root', '');
 		} catch (PDOException $e) {
-			echo "Koneksi gagal: " . $e->getMessage();
-			die(); // Hentikan eksekusi jika gagal koneksi ke database
+			echo $e;
 		}
 	}
 

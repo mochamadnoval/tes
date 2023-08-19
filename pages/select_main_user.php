@@ -45,7 +45,7 @@
 
       <?php if(isset($_SESSION['role'])): ?>
       <?php if ($_SESSION['role']=='user'): ?>
-        <a href="pages/diagnosa_page.php">
+        <a href="pages/question_page.php">
           <div class="col-lg info-panel mr-3 mb-3">
             <img src="photos/stetoskop.png" alt="High Res">
             <h4>Konsultasi</h4>
