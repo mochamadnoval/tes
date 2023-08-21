@@ -2,26 +2,30 @@
 <?php
 class Riwayat
 {
-	private $pdo;
+    private $pdo;
 
-	function __construct()
-	{
-		try {
-			$this->pdo = new PDO('mysql:host=localhost;dbname=konsuldoc', 'root', '');
-		} catch (PDOException $e) {
-			echo $e;
-		}
-	}
+    function __construct()
+    {
+        try {
+            $this->pdo = new PDO('mysql:host=localhost;dbname=konsuldoc', 'root', '');
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Error koneksi database: " . $e->getMessage();
+            die();
+        }
+    }
 
-	public function riwayatKonsultasi($id) {
-// Mendapatkan kode gejala dari parameter URL
-$kodeGejala = $_GET['kode_gejala'];
-
-// Menggunakan prepared statement untuk mencegah SQL injection
-$stmt = $conn->prepare("SELECT kode_penyakit FROM tabel_aturan WHERE kode_gejala IN (?)");
-$stmt->bind_param("s", $kodeGejala);
-$stmt->execute();
-$result = $stmt->get_result();
+	public function riwayatKonsultasi($user_id)
+    {
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM riwayat_konsultasi WHERE id_user = ?");
+            $stmt->execute([$user_id]);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return [];
+        }
     }
 
 
