@@ -47,7 +47,7 @@
                 <br><center><p>2023 &copy; All Right Reserved Apps E-Bidan</a></p></center>
                 
 
-                <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="reset">Forgot your password?</a></p>
+                <!-- <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="reset">Forgot your password?</a></p> -->
             </div> <!-- cd-signin-modal__block -->
 
             <div class="cd-signin-modal__block js-signin-modal-block" data-type="signup"> <!-- sign up form -->
@@ -83,10 +83,10 @@
                         <span class="cd-signin-modal__error">Error message here!</span>
                     </p>
 
-                    <p class="cd-signin-modal__fieldset">
+                    <!-- <p class="cd-signin-modal__fieldset">
                         <input type="checkbox" id="accept-terms" class="cd-signin-modal__input ">
                         <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
-                    </p>
+                    </p> -->
 
                     <p class="cd-signin-modal__fieldset">
                         <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" type="submit" value="Create account">

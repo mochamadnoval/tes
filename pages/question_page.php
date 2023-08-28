@@ -11,11 +11,11 @@
     <div class="container-fluid ml-12">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="text-center">Konsultasi Penyakit</h3>
+                <h4 class="text-center">Konsultasi Penyakit</h4>
             </div>
             <div class="scroll-box">
                 <div class="question mt-5">
-                    <h5 id="question-text"><?php echo $data[0]['nama_gejala']; ?></h5>
+                    <h3 id="question-text"><?php echo $data[0]['nama_gejala']; ?></h3>
                     <div class="answers">
                         <button class="btn btn-success" onclick="nextQuestion(true)">Ya</button>
                         <button class="btn btn-danger" onclick="nextQuestion(false)">Tidak</button>

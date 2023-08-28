@@ -1,7 +1,7 @@
 <?php
 // Koneksi ke database
 $host = 'localhost';
-$dbname = 'konsuldoc';
+$dbname = 'ebidan';
 $username = 'root';
 $password = '';
 

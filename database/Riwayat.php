@@ -7,7 +7,7 @@ class Riwayat
     function __construct()
     {
         try {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=konsuldoc', 'root', '');
+            $this->pdo = new PDO('mysql:host=localhost;dbname=ebidan', 'root', '');
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo "Error koneksi database: " . $e->getMessage();

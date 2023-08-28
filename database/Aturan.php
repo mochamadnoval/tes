@@ -9,7 +9,7 @@ class Aturan
 	function __construct()
 	{
 		try {
-			$this->pdo = new PDO('mysql:host=localhost;dbname=konsuldoc', 'root', '');
+			$this->pdo = new PDO('mysql:host=localhost;dbname=ebidan', 'root', '');
 		} catch (PDOException $e) {
 			echo $e;
 		}

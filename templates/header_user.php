@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="pesan.css" rel="stylesheet">
-    <title>Konsul Doc</title>
+    <title>E-BIDAN</title>
 
     <link rel="stylesheet" href="csslogin/styles.css"> <!-- Resource style -->
     <link rel="stylesheet" href="csslogin/demo.css"> <!-- Demo style -->
