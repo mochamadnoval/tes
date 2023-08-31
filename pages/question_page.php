@@ -11,11 +11,11 @@
     <div class="container-fluid ml-12">
         <div class="box">
             <div class="box-header with-border">
-                <h4 class="text-center">Konsultasi Penyakit</h4>
+                <h3 class="text-center">Konsultasi Penyakit</h3>
             </div>
             <div class="scroll-box">
                 <div class="question mt-5">
-                    <h3 id="question-text"><?php echo $data[0]['nama_gejala']; ?></h3>
+                    <h5 id="question-text"><?php echo $data[0]['nama_gejala']; ?></h5>
                     <div class="answers">
                         <button class="btn btn-success" onclick="nextQuestion(true)">Ya</button>
                         <button class="btn btn-danger" onclick="nextQuestion(false)">Tidak</button>
@@ -62,13 +62,15 @@
                             }
                         }
                     };
-                    xhr.open("GET", "proses_konsultasi.php?kode_gejala=" + kodeGejala, true);
-                    xhr.send();
+                    // xhr.open("GET", "proses_konsultasi.php?kode_gejala=" + kodeGejala, true);
+                    // xhr.send();
+                   
+                    window.location.href = "proses_konsultasi.php?kode_gejala=" + kodeGejala;
                 } else {
                     alert('Tidak ada jawaban "Ya" yang dipilih.');
                 }
 
-                window.location.href = 'hasil_konsultasi.php';
+                // window.location.href = 'hasil_konsultasi.php';
             }
         }
     </script>

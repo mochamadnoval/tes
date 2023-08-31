@@ -16,17 +16,23 @@ class Riwayat
     }
 
 	public function riwayatKonsultasi($user_id)
-    {
-        try {
-            $stmt = $this->pdo->prepare("SELECT * FROM riwayat_konsultasi WHERE id_user = ?");
-            $stmt->execute([$user_id]);
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            return [];
-        }
+{
+    try {
+        $stmt = $this->pdo->prepare("
+            SELECT r.*, p.nama_penyakit, p.info_penyakit, p.solusi
+            FROM riwayat_konsultasi r
+            INNER JOIN penyakit p ON r.kode_penyakit = p.kode_penyakit
+            WHERE r.id_user = ?
+        ");
+        $stmt->execute([$user_id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return [];
     }
+}
+
 
 
      // Metode baru untuk menyimpan data konsultasi
